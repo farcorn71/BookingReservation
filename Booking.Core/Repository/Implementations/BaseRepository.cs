@@ -40,6 +40,16 @@ namespace Booking.Core.Data.Repository.Implementations
             return _dbCollection.Find<T>(T => true).ToList();
         }
 
+        public virtual T GetBySpecfied(FilterDefinition<T> filter)
+        {
+            return _dbCollection.Find<T>(filter).FirstOrDefault();
+        }
+
+        public virtual IEnumerable<T> GetListBySpecfied(FilterDefinition<T>  filter)
+        {
+            return _dbCollection.Find<T>(filter).ToList();
+        }
+
         public void Update(T entity)
         {
             _dbCollection.ReplaceOne(Builders<T>.Filter.Eq("_id", entity.Id), entity);

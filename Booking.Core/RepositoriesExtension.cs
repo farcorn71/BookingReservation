@@ -9,6 +9,8 @@ namespace Booking.Core.Data
         public static void RegisterRepos(this IServiceCollection services)
         {
             services.AddTransient<ICustomerRepository, CustomerRepository>();
+            services.AddTransient<IRoomRepository, RoomRepository>();
+            services.AddTransient<IBookingReservationRepository, BookingReservationRepository>();
         }
     }
 }

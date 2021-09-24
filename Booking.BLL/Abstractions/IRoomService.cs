@@ -11,6 +11,8 @@ namespace Booking.BLL.Business.Abstractions
 
         GetRoomResponse Get(Guid request);
 
+        GetRoomResponse GetByRoomNo(string request);
+
         List<GetRoomResponse> GetAll();
 
         bool Delete(Guid request);

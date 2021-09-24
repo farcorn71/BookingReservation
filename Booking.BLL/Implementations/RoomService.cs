@@ -8,6 +8,7 @@ using Booking.Core.Entities.ClientEntities.Request;
 using Booking.Core.Entities.ClientEntities.Response;
 using System.Collections.Generic;
 using System.Linq;
+using MongoDB.Driver;
 
 namespace Booking.BLL.Business.Implementations
 {
@@ -39,6 +40,23 @@ namespace Booking.BLL.Business.Implementations
             GetRoomResponse room = new GetRoomResponse();
 
             var response = _collection.GetService<IRoomRepository>().GetById(request);
+
+            if (response != null)
+            {
+                room.Id = response.Id;
+                room.RoomName = response.RoomName;
+                room.RoomNo = response.RoomNo;
+                room.Price = response.Price;
+                room.ServicesDescription = response.ServicesDescription;
+            }
+            return room;
+        }
+
+        public GetRoomResponse GetByRoomNo(string roomNo)
+        {
+            GetRoomResponse room = new GetRoomResponse();
+            var filter = Builders<Room>.Filter.Eq("RoomNo", roomNo);
+            var response = _collection.GetService<IRoomRepository>().GetBySpecfied(filter);
 
             if (response != null)
             {

@@ -1,9 +1,10 @@
 ﻿using System;
 
-namespace Booking.Core.Entities.ClientEntities.Request
+namespace Booking.Core.Entities.ClientEntities.Response
 {
-    public class AddBookingRequest
+    public class GetBookingResponse
     {
+        public Guid Id { get; set; }
         public string CustomerId { get; set; }
 
         public string RoomNo { get; set; }

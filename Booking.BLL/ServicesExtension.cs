@@ -9,6 +9,8 @@ namespace Booking.BLL
         public static void RegisterServices(this IServiceCollection services)
         {
             services.AddTransient<ICustomerService, CustomerService>();
+            services.AddTransient<IRoomService, RoomService>();
+            services.AddTransient<IBookingReservationService, BookingReservationService>();
         }
     }
 }

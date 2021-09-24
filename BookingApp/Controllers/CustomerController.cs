@@ -44,7 +44,7 @@ namespace BookingApp.Controllers
           
 
             _machine.Configure(State.Registered)
-                .Permit(Trigger.ClientBookedInSendMail, State.Registered);
+                .Permit(Trigger.ClientBookedInSendMail, State.CheckIn);
 
         }
 
@@ -52,11 +52,6 @@ namespace BookingApp.Controllers
         StateMachine<State, Trigger> _machine;
         StateMachine<State, Trigger>.TriggerWithParameters<int> _setClientRegistrationTrigger;
 
-        StateMachine<State, Trigger>.TriggerWithParameters<string> _setCalleeTrigger;
-
-        string _caller;
-
-        string _callee;
         [HttpPost]
         //[Route("Add")]
         public bool Add(AddCustomerRequest request)

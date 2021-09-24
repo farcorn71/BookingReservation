@@ -5,13 +5,13 @@ using System;
 namespace Booking.Core.Entities.BusinessEntities
 {
     [BsonCollection("booking")]
-    public class Booking : BaseEntity
+    public class BookingReservation : BaseEntity
     {
         public string CustomerId { get; set; }
        
         public string RoomNo { get; set; }
 
-        public string NoOfdays { get; set; }
+        public int NoOfdays { get; set; }
 
         public bool RoomStatus { get; set; }
     }
