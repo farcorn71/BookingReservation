@@ -6,6 +6,8 @@ using Booking.Core.Entities.BusinessEntities;
 using Booking.Core.Entities.ClientEntities;
 using Booking.Core.Entities.ClientEntities.Request;
 using Booking.Core.Entities.ClientEntities.Response;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Booking.BLL.Business.Implementations
 {
@@ -45,6 +47,24 @@ namespace Booking.BLL.Business.Implementations
                 //response.BirthDate = customer.BirthDate;
             }
             return response;
+        }
+
+        public List<GetCustomerResponse> GetAll()
+        {
+            List <GetCustomerResponse> responses = new List<GetCustomerResponse>();
+
+            IEnumerable<Customer> customers = _collection.GetService<ICustomerRepository>().GetAll().AsEnumerable();
+
+            foreach(var customer in customers)
+            {
+                GetCustomerResponse response = new GetCustomerResponse();
+                response.Id = customer.Id;
+                response.FirstName = customer.FirstName;
+                response.LastName = customer.LastName;
+                responses.Add(response);
+                //response.BirthDate = customer.BirthDate;
+            }
+            return responses;
         }
 
         public bool Delete(Guid request)

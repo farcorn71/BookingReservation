@@ -5,13 +5,13 @@ using System.Collections.Generic;
 
 namespace Booking.BLL.Business.Abstractions
 {
-    public interface ICustomerService
+    public interface IRoomService
     {
-        bool Add(AddCustomerRequest request);
+        bool Add(AddRoomRequest request);
 
-        GetCustomerResponse Get(Guid request);
+        GetRoomResponse Get(Guid request);
 
-        List<GetCustomerResponse> GetAll();
+        List<GetRoomResponse> GetAll();
 
         bool Delete(Guid request);
     }

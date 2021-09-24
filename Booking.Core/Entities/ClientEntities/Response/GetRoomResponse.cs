@@ -5,12 +5,10 @@ namespace Booking.Core.Entities.ClientEntities.Response
     public class GetRoomResponse
     {
         public Guid Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public DateTime CheckInDate { get; set; }
+        public string RoomName { get; set; }
+        public string RoomNo { get; set; }
+        public decimal Price { get; set; }
 
-        public string EmailAddress { get; set; }
-
-        public string PhoneNo { get; set; }
+        public string ServicesDescription { get; set; }
     }
 }
