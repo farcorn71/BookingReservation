@@ -9,6 +9,7 @@ using Microsoft.Extensions.Logging;
 using Booking.BLL.Business.Abstractions;
 using Booking.Core.Entities.ClientEntities.Response;
 using Stateless;
+using Booking.BLL;
 
 namespace BookingApp.Controllers
 {
@@ -19,6 +20,8 @@ namespace BookingApp.Controllers
        
 
         private readonly ILogger<CustomerController> _logger;
+        private readonly IEmailHelper _emailHelper;
+        private readonly IEmailSender _emailSender;
 
 
         private readonly IServiceProvider _collection;
@@ -30,27 +33,41 @@ namespace BookingApp.Controllers
         }
 
         enum State
-        { Registered, BookedRoom, CheckIn, CheckOut    }
+        { New, Registered, BookedRoom, CheckIn, CheckOut    }
 
         State _state = State.Registered;
 
-        public CustomerController(IServiceProvider collection, ILogger<CustomerController> logger)
+        public CustomerController(IServiceProvider collection, ILogger<CustomerController> logger, IEmailSender emailSender, IEmailHelper emailHelper)
         {
             _collection = collection;
             _logger = logger;
+            _emailHelper = emailHelper;
+            _emailSender = emailSender;
 
-            _machine = new StateMachine<State, Trigger>(() => _state, s => _state = s);
 
-          
 
+            // Instantiate a new state machine in the New state
+            _machine = new StateMachine<State, Trigger>(State.New);
+
+            _machine.Configure(State.New)
+                .Permit(Trigger.ClientRegisteredSendMail, State.Registered);
+
+            // Instantiate a new trigger with a parameter. 
+            _setClientRegistrationTrigger = _machine.SetTriggerParameters<string>(Trigger.ClientRegisteredSendMail);
+
+            // Configure the Registered state
             _machine.Configure(State.Registered)
-                .Permit(Trigger.ClientBookedInSendMail, State.CheckIn);
-
+                .SubstateOf(State.New)
+                .OnEntryFrom(_setClientRegistrationTrigger, OnClientRegisteredSendMail)  // This is where the TriggerWithParameters is used. Note that the TriggerWithParameters object is used, not something from the enum
+                .PermitReentry(Trigger.ClientRegisteredSendMail);
         }
 
 
+
         StateMachine<State, Trigger> _machine;
-        StateMachine<State, Trigger>.TriggerWithParameters<int> _setClientRegistrationTrigger;
+        StateMachine<State, Trigger>.TriggerWithParameters<string> _setClientRegistrationTrigger;
+
+        private string _newCustomer;
 
         [HttpPost]
         //[Route("Add")]
@@ -61,7 +78,7 @@ namespace BookingApp.Controllers
                 var client = _collection.GetService<ICustomerService>().Add(request);
                 if(client != null)
                 {
-                    _machine.Fire(Trigger.ClientBookedInSendMail);
+                    ClientRegisteredSendMail(request.EmailAddress);
                 }
                 return client;
             }
@@ -75,6 +92,18 @@ namespace BookingApp.Controllers
             {
                 return _collection.GetService<ICustomerService>().GetAll();
             }
+        }
+
+        public void OnClientRegisteredSendMail(string newCustomer) {
+            var builder = _emailHelper.BodyBuilder("CustomerRegistration.html");
+
+            _emailSender.SendMail(newCustomer, "New Customer", "");
+        }
+
+        public void ClientRegisteredSendMail(string newCustomer)
+        {
+            // This is how a trigger with parameter is used, the parameter is supplied to the state machine as a parameter to the Fire method.
+            _machine.Fire(_setClientRegistrationTrigger, newCustomer);
         }
     }
 }

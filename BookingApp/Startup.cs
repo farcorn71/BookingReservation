@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Booking.BLL;
 using Booking.Core.Data;
 using Booking.Core.Helpers;
+using Booking.Core.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,7 +31,7 @@ namespace BookingApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.Configure<MongoDbSettings>(Configuration.GetSection("MongoDbSettings"));
-
+            services.Configure<AppConfig>(Configuration.GetSection("ApplicationConfigurations"));
             services.AddSingleton<IMongoDbSettings>(serviceProvider => serviceProvider.GetRequiredService<IOptions<MongoDbSettings>>().Value);
 
             services.AddSingleton<IMongoDBContext, MongoDBContext>();

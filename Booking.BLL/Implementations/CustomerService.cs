@@ -26,6 +26,7 @@ namespace Booking.BLL.Business.Implementations
             //entity.BirthDate = request.BirthDate;
             entity.FirstName = request.FirstName;
             entity.LastName = request.LastName;
+            entity.EmailAddress = request.EmailAddress;
             entity.CreateDate = DateTime.Now;
 
             var customer = _collection.GetService<ICustomerRepository>().Add(entity);
@@ -44,6 +45,7 @@ namespace Booking.BLL.Business.Implementations
                 response.Id = customer.Id;
                 response.FirstName = customer.FirstName;
                 response.LastName = customer.LastName;
+                response.EmailAddress = customer.EmailAddress;
                 //response.BirthDate = customer.BirthDate;
             }
             return response;
@@ -60,6 +62,7 @@ namespace Booking.BLL.Business.Implementations
                 GetCustomerResponse response = new GetCustomerResponse();
                 response.Id = customer.Id;
                 response.FirstName = customer.FirstName;
+                response.EmailAddress = customer.EmailAddress;
                 response.LastName = customer.LastName;
                 responses.Add(response);
                 //response.BirthDate = customer.BirthDate;

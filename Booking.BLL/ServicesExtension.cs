@@ -11,6 +11,8 @@ namespace Booking.BLL
             services.AddTransient<ICustomerService, CustomerService>();
             services.AddTransient<IRoomService, RoomService>();
             services.AddTransient<IBookingReservationService, BookingReservationService>();
+            services.AddTransient<IEmailHelper, EmailHelper>();
+            services.AddTransient<IEmailSender, EmailSender>();
         }
     }
 }

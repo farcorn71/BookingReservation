@@ -6,10 +6,11 @@ C:\Users\CORNELIUS-PC\source\repos\BookingApp\Booking.BLL\bin\Debug\netstandard2
 C:\Users\CORNELIUS-PC\source\repos\BookingApp\Booking.BLL\bin\Debug\netstandard2.0\Booking.BLL.pdb
 C:\Users\CORNELIUS-PC\source\repos\BookingApp\Booking.BLL\bin\Debug\netstandard2.0\Booking.Core.dll
 C:\Users\CORNELIUS-PC\source\repos\BookingApp\Booking.BLL\bin\Debug\netstandard2.0\Booking.Core.pdb
-C:\Users\CORNELIUS-PC\source\repos\BookingApp\Booking.BLL\obj\Debug\netstandard2.0\Booking.BLL.csprojAssemblyReference.cache
 C:\Users\CORNELIUS-PC\source\repos\BookingApp\Booking.BLL\obj\Debug\netstandard2.0\Booking.BLL.AssemblyInfoInputs.cache
 C:\Users\CORNELIUS-PC\source\repos\BookingApp\Booking.BLL\obj\Debug\netstandard2.0\Booking.BLL.AssemblyInfo.cs
 C:\Users\CORNELIUS-PC\source\repos\BookingApp\Booking.BLL\obj\Debug\netstandard2.0\Booking.BLL.csproj.CoreCompileInputs.cache
 C:\Users\CORNELIUS-PC\source\repos\BookingApp\Booking.BLL\obj\Debug\netstandard2.0\Booking.BLL.csproj.CopyComplete
 C:\Users\CORNELIUS-PC\source\repos\BookingApp\Booking.BLL\obj\Debug\netstandard2.0\Booking.BLL.dll
 C:\Users\CORNELIUS-PC\source\repos\BookingApp\Booking.BLL\obj\Debug\netstandard2.0\Booking.BLL.pdb
+C:\Users\CORNELIUS-PC\source\repos\BookingApp\Booking.BLL\obj\Debug\netstandard2.0\Booking.BLL.csproj.AssemblyReference.cache
+C:\Users\CORNELIUS-PC\source\repos\BookingApp\Booking.BLL\obj\Debug\netstandard2.0\Booking.BLL.GeneratedMSBuildEditorConfig.editorconfig

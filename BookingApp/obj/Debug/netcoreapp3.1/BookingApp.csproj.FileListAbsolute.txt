@@ -3,7 +3,6 @@ C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\bin\Debug\netcoreapp3.1
 C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\bin\Debug\netcoreapp3.1\libzstd.dll
 C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\bin\Debug\netcoreapp3.1\BookingApp.exe
 C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\bin\Debug\netcoreapp3.1\BookingApp.deps.json
 C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\bin\Debug\netcoreapp3.1\BookingApp.runtimeconfig.json
@@ -41,7 +40,6 @@ C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\bin\Debug\netcoreapp3.1
 C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\bin\Debug\netcoreapp3.1\Booking.Core.dll
 C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\bin\Debug\netcoreapp3.1\Booking.BLL.pdb
 C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\bin\Debug\netcoreapp3.1\Booking.Core.pdb
-C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\obj\Debug\netcoreapp3.1\BookingApp.csprojAssemblyReference.cache
 C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\obj\Debug\netcoreapp3.1\BookingApp.AssemblyInfoInputs.cache
 C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\obj\Debug\netcoreapp3.1\BookingApp.AssemblyInfo.cs
 C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\obj\Debug\netcoreapp3.1\BookingApp.csproj.CoreCompileInputs.cache
@@ -53,3 +51,6 @@ C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\obj\Debug\netcoreapp3.1
 C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\obj\Debug\netcoreapp3.1\BookingApp.dll
 C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\obj\Debug\netcoreapp3.1\BookingApp.pdb
 C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\obj\Debug\netcoreapp3.1\BookingApp.genruntimeconfig.cache
+C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\obj\Debug\netcoreapp3.1\BookingApp.csproj.AssemblyReference.cache
+C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\obj\Debug\netcoreapp3.1\BookingApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\obj\Debug\netcoreapp3.1\scopedcss\bundle\BookingApp.styles.css
