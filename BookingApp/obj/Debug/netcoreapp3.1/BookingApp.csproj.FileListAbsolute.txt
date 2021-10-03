@@ -54,3 +54,15 @@ C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\obj\Debug\netcoreapp3.1
 C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\obj\Debug\netcoreapp3.1\BookingApp.csproj.AssemblyReference.cache
 C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\obj\Debug\netcoreapp3.1\BookingApp.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\obj\Debug\netcoreapp3.1\scopedcss\bundle\BookingApp.styles.css
+C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
+C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\bin\Debug\netcoreapp3.1\System.Web.Http.dll
+C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\CORNELIUS-PC\source\repos\BookingApp\BookingApp\obj\Debug\netcoreapp3.1\BookingApp.MvcApplicationPartsAssemblyInfo.cs

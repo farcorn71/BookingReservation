@@ -1,19 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Booking.BLL;
+using Booking.BLL.Helpers;
 using Booking.Core.Data;
 using Booking.Core.Helpers;
 using Booking.Core.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
 namespace BookingApp
@@ -30,8 +24,10 @@ namespace BookingApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // configure strongly typed settings object
+            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
             services.Configure<MongoDbSettings>(Configuration.GetSection("MongoDbSettings"));
-            services.Configure<AppConfig>(Configuration.GetSection("ApplicationConfigurations"));
+            services.Configure<AppConfig>(Configuration.GetSection("SMTPConfigurations"));
             services.AddSingleton<IMongoDbSettings>(serviceProvider => serviceProvider.GetRequiredService<IOptions<MongoDbSettings>>().Value);
 
             services.AddSingleton<IMongoDBContext, MongoDBContext>();
@@ -55,6 +51,9 @@ namespace BookingApp
             app.UseRouting();
 
             app.UseAuthorization();
+
+            // custom jwt auth middleware
+            app.UseMiddleware<JwtMiddleware>();
 
             app.UseEndpoints(endpoints =>
             {

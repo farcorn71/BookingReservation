@@ -13,6 +13,7 @@ namespace Booking.BLL
             services.AddTransient<IBookingReservationService, BookingReservationService>();
             services.AddTransient<IEmailHelper, EmailHelper>();
             services.AddTransient<IEmailSender, EmailSender>();
+            services.AddTransient<IUserService, UserService>();
         }
     }
 }
