@@ -47,7 +47,7 @@ namespace BookingApp.Controllers
             _machine.Configure(State.Free)
                 .Permit(Trigger.ClientBookedInSendMail, State.Occupied);
         }
-
+        [Authorize]
         [HttpPost]
         //[Route("Add")]
         public bool Add(AddBookingRequest request)
@@ -66,7 +66,7 @@ namespace BookingApp.Controllers
                 {
                     return false;
                 }
-
+                var currentUser = HttpContext.Items["User"];
                 var bookingReservation = _collection.GetService<IBookingReservationService>().Add(request);
 
                 if (bookingReservation != null)
@@ -76,7 +76,7 @@ namespace BookingApp.Controllers
                 return bookingReservation;
             }
         }
-
+        [Authorize]
         [HttpGet]
         //[Route("Get")]
         public List<GetBookingResponse> Get()
@@ -86,7 +86,7 @@ namespace BookingApp.Controllers
                 return _collection.GetService<IBookingReservationService>().GetAll();
             }
         }
-
+        [Authorize]
         [HttpGet]
         [Route("dashboard")]
         public GetDashBoardResponse Dashboard()

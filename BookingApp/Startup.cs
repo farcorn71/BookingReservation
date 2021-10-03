@@ -31,7 +31,7 @@ namespace BookingApp
             services.AddSingleton<IMongoDbSettings>(serviceProvider => serviceProvider.GetRequiredService<IOptions<MongoDbSettings>>().Value);
 
             services.AddSingleton<IMongoDBContext, MongoDBContext>();
-
+            services.AddHttpContextAccessor();
             services.RegisterRepos();
             services.RegisterServices();
 

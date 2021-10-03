@@ -27,6 +27,7 @@ namespace BookingApp.Controllers
             _logger = logger;
         }
 
+        [Authorize]
         [HttpPost]
         //[Route("Add")]
         public bool Add(AddRoomRequest request)

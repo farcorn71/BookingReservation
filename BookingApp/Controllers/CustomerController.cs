@@ -69,6 +69,7 @@ namespace BookingApp.Controllers
 
         private string _newCustomer;
 
+        [Authorize]
         [HttpPost]
         //[Route("Add")]
         public bool Add(AddCustomerRequest request)

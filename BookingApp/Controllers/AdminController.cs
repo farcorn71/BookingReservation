@@ -1,5 +1,6 @@
 ﻿using Booking.BLL.Business.Implementations;
 using Booking.Core.Entities.ClientEntities.Request;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers
@@ -9,13 +10,12 @@ namespace WebApi.Controllers
     public class AdminController : ControllerBase
     {
         private IUserService _userService;
-
         public AdminController(IUserService userService)
         {
             _userService = userService;
         }
 
-        [HttpPost("authenticate")]
+        [HttpPost("auth")]
         public IActionResult Authenticate(AuthenticateRequest model)
         {
             var response = _userService.Authenticate(model);
