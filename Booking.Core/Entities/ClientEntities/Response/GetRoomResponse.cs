@@ -10,5 +10,7 @@ namespace Booking.Core.Entities.ClientEntities.Response
         public decimal Price { get; set; }
 
         public string ServicesDescription { get; set; }
+        public string ActionBy { get; set; }
+        public string ActionPerformed { get; set; }
     }
 }

@@ -10,6 +10,7 @@ using Booking.BLL.Business.Abstractions;
 using Booking.Core.Entities.ClientEntities.Response;
 using Stateless;
 using Booking.BLL;
+using Booking.Core.Entities.BusinessEntities;
 
 namespace BookingApp.Controllers
 {
@@ -67,7 +68,6 @@ namespace BookingApp.Controllers
         StateMachine<State, Trigger> _machine;
         StateMachine<State, Trigger>.TriggerWithParameters<string> _setClientRegistrationTrigger;
 
-        private string _newCustomer;
 
         [Authorize]
         [HttpPost]
@@ -76,8 +76,12 @@ namespace BookingApp.Controllers
         {
             using (var scope = _collection.CreateScope())
             {
+                var currentUser = (User)HttpContext.Items["User"];
+                request.ActionBy = currentUser.Username;
+                request.ActionPerformed = "AddCustomer";
+                
                 var client = _collection.GetService<ICustomerService>().Add(request);
-                if(client != null)
+                if(client != true)
                 {
                     ClientRegisteredSendMail(request.EmailAddress);
                 }

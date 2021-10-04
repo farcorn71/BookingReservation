@@ -29,6 +29,10 @@ namespace Booking.BLL.Business.Implementations
             entity.RoomNo = request.RoomNo;
             entity.Price = request.Price;
             entity.ServicesDescription = request.ServicesDescription;
+            entity.CreateDate = DateTime.Now;
+
+            entity.ActionBy = request.ActionBy;
+            entity.ActionPerformed = request.ActionPerformed;
 
             var room = _collection.GetService<IRoomRepository>().Add(entity);
 
@@ -48,6 +52,8 @@ namespace Booking.BLL.Business.Implementations
                 room.RoomNo = response.RoomNo;
                 room.Price = response.Price;
                 room.ServicesDescription = response.ServicesDescription;
+                room.ActionBy = response.ActionBy;
+                room.ActionPerformed = response.ActionPerformed;
             }
             return room;
         }
@@ -65,6 +71,8 @@ namespace Booking.BLL.Business.Implementations
                 room.RoomNo = response.RoomNo;
                 room.Price = response.Price;
                 room.ServicesDescription = response.ServicesDescription;
+                room.ActionBy = response.ActionBy;
+                room.ActionPerformed = response.ActionPerformed;
             }
             return room;
         }
@@ -83,6 +91,8 @@ namespace Booking.BLL.Business.Implementations
                 response.RoomNo = room.RoomNo;
                 response.Price = room.Price;
                 response.ServicesDescription = room.ServicesDescription;
+                room.ActionBy = response.ActionBy;
+                room.ActionPerformed = response.ActionPerformed;
                 responses.Add(response);
                 //response.BirthDate = customer.BirthDate;
             }

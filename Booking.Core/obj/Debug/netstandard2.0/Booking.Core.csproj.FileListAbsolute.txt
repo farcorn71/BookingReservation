@@ -4,10 +4,10 @@ C:\Users\CORNELIUS-PC\source\repos\BookingApp\Booking.Core\bin\Debug\netstandard
 C:\Users\CORNELIUS-PC\source\repos\BookingApp\Booking.Core\bin\Debug\netstandard2.0\Booking.Core.deps.json
 C:\Users\CORNELIUS-PC\source\repos\BookingApp\Booking.Core\bin\Debug\netstandard2.0\Booking.Core.dll
 C:\Users\CORNELIUS-PC\source\repos\BookingApp\Booking.Core\bin\Debug\netstandard2.0\Booking.Core.pdb
+C:\Users\CORNELIUS-PC\source\repos\BookingApp\Booking.Core\obj\Debug\netstandard2.0\Booking.Core.csproj.AssemblyReference.cache
+C:\Users\CORNELIUS-PC\source\repos\BookingApp\Booking.Core\obj\Debug\netstandard2.0\Booking.Core.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\CORNELIUS-PC\source\repos\BookingApp\Booking.Core\obj\Debug\netstandard2.0\Booking.Core.AssemblyInfoInputs.cache
 C:\Users\CORNELIUS-PC\source\repos\BookingApp\Booking.Core\obj\Debug\netstandard2.0\Booking.Core.AssemblyInfo.cs
 C:\Users\CORNELIUS-PC\source\repos\BookingApp\Booking.Core\obj\Debug\netstandard2.0\Booking.Core.csproj.CoreCompileInputs.cache
 C:\Users\CORNELIUS-PC\source\repos\BookingApp\Booking.Core\obj\Debug\netstandard2.0\Booking.Core.dll
 C:\Users\CORNELIUS-PC\source\repos\BookingApp\Booking.Core\obj\Debug\netstandard2.0\Booking.Core.pdb
-C:\Users\CORNELIUS-PC\source\repos\BookingApp\Booking.Core\obj\Debug\netstandard2.0\Booking.Core.csproj.AssemblyReference.cache
-C:\Users\CORNELIUS-PC\source\repos\BookingApp\Booking.Core\obj\Debug\netstandard2.0\Booking.Core.GeneratedMSBuildEditorConfig.editorconfig

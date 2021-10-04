@@ -10,6 +10,7 @@ namespace Booking.BLL.Business.Abstractions
         bool Add(AddCustomerRequest request);
 
         GetCustomerResponse Get(Guid request);
+        GetCustomerResponse Get(string requestId);
 
         List<GetCustomerResponse> GetAll();
 

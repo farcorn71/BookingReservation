@@ -9,5 +9,7 @@ namespace Booking.Core.Entities.ClientEntities.Request
         public string ServicesDescription { get; set; }
 
         public string RoomNo { get; set; }
+        public string ActionBy { get; set; }
+        public string ActionPerformed { get; set; }
     }
 }

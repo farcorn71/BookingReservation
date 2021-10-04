@@ -8,8 +8,9 @@ namespace Booking.Core.Entities.BusinessEntities
     public class BookingReservation : BaseEntity
     {
         public string CustomerId { get; set; }
-       
         public string RoomNo { get; set; }
+
+        public decimal Amount { get; set; }
 
         public int NoOfdays { get; set; }
 

@@ -10,7 +10,6 @@ namespace Booking.Core.Entities.BusinessEntities
         public string RoomName { get; set; }
         public decimal Price { get; set; }
         public string ServicesDescription { get; set; }
-
         public string RoomNo { get; set; }
     }
 }

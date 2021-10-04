@@ -8,6 +8,7 @@ using Booking.Core.Entities.ClientEntities.Request;
 using Booking.Core.Entities.ClientEntities.Response;
 using System.Collections.Generic;
 using System.Linq;
+using MongoDB.Driver;
 
 namespace Booking.BLL.Business.Implementations
 {
@@ -29,6 +30,10 @@ namespace Booking.BLL.Business.Implementations
             entity.EmailAddress = request.EmailAddress;
             entity.CreateDate = DateTime.Now;
 
+            entity.ActionBy = request.ActionBy;
+            entity.ActionPerformed = request.ActionPerformed;
+
+
             var customer = _collection.GetService<ICustomerRepository>().Add(entity);
 
             return customer != null ? true : false;
@@ -46,6 +51,28 @@ namespace Booking.BLL.Business.Implementations
                 response.FirstName = customer.FirstName;
                 response.LastName = customer.LastName;
                 response.EmailAddress = customer.EmailAddress;
+                response.ActionBy = customer.ActionBy;
+                response.ActionPerformed = customer.ActionPerformed;
+                //response.BirthDate = customer.BirthDate;
+            }
+            return response;
+        }
+
+        public GetCustomerResponse Get(string requestId)
+        {
+            GetCustomerResponse response = new GetCustomerResponse();
+            var filter = Builders<Customer>.Filter.Eq("Id", requestId);
+            var customer = _collection.GetService<ICustomerRepository>().GetBySpecfied(filter);
+
+            if (customer != null)
+            {
+                response.Id = customer.Id;
+                response.FirstName = customer.FirstName;
+                response.LastName = customer.LastName;
+                response.EmailAddress = customer.EmailAddress;
+                response.ActionBy = customer.ActionBy;
+                response.ActionPerformed = customer.ActionPerformed;
+
                 //response.BirthDate = customer.BirthDate;
             }
             return response;
@@ -64,6 +91,8 @@ namespace Booking.BLL.Business.Implementations
                 response.FirstName = customer.FirstName;
                 response.EmailAddress = customer.EmailAddress;
                 response.LastName = customer.LastName;
+                response.ActionBy = customer.ActionBy;
+                response.ActionPerformed = customer.ActionPerformed;
                 responses.Add(response);
                 //response.BirthDate = customer.BirthDate;
             }

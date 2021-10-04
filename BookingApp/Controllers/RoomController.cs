@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Booking.BLL.Business.Abstractions;
 using Booking.Core.Entities.ClientEntities.Response;
+using Booking.Core.Entities.BusinessEntities;
 
 namespace BookingApp.Controllers
 {
@@ -34,6 +35,9 @@ namespace BookingApp.Controllers
         {
             using (var scope = _collection.CreateScope())
             {
+                var currentUser = (User)HttpContext.Items["User"];
+                request.ActionBy = currentUser.Username;
+                request.ActionPerformed = "AddRoom";
                 return _collection.GetService<IRoomService>().Add(request);
             }
         }

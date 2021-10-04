@@ -52,7 +52,8 @@ namespace Booking.Core.Data.Repository.Implementations
 
         public void Update(T entity)
         {
-            _dbCollection.ReplaceOne(Builders<T>.Filter.Eq("_id", entity.Id), entity);
+            string iid = "" + entity.Id;
+            _dbCollection.ReplaceOne(Builders<T>.Filter.Eq("_id", iid), entity);
         }
     }
 }

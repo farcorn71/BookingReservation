@@ -10,8 +10,6 @@ namespace Booking.Core.Entities.BusinessEntities
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string EmailAddress { get; set; }
-
         public string PhoneNo { get; set; }
-        public DateTime CheckoutDate { get; set; }
     }
 }
