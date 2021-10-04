@@ -138,7 +138,7 @@ namespace BookingApp.Controllers
         [Authorize]
         [HttpGet]
         [Route("GetByRoomNo")]
-        public List<GetBookingResponse> Get(string roomNo)
+        public List<GetBookingResponse> Get([FromQuery]string roomNo)
         {
             using (var scope = _collection.CreateScope())
             {
